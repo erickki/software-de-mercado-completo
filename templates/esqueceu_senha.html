@@ -13,19 +13,24 @@
             <h2>Esqueceu né!</h2>
             <h3>Faça sua solicitação!</h3>
         </div>
-        <div class="separador_caixa_sistema_login2">
-            <input type="text" placeholder="Nome">
-            <input type="text" placeholder="Email">
-            <button type="submit">Solicitar</button>
-        </div>
-        <div class="separador_caixa_sistema_login3">
-            <h4>Não tem uma conta?</h4>
-            <a href="/registro">Registre-se!</a>
-        </div>
-        <div class="separador_caixa_sistema_login3">
-            <h4>Já tem uma conta?</h4>
-            <a href="/login">Logar-se!</a>
-        </div>
+        <form method="POST" action="/fazer_esqueceu_senha">
+            <div class="separador_caixa_sistema_login2">
+                <input type="text" placeholder="Nome" name="entrada_nome_validar">
+                <input type="text" placeholder="Email" name="entrada_email_validar">
+                <button type="submit">Solicitar</button>
+            </div>
+            <div class="separador_caixa_sistema_login3">
+                <h4>Não tem uma conta?</h4>
+                <a href="/registro">Registre-se!</a>
+            </div>
+            <div class="separador_caixa_sistema_login3">
+                <h4>Já tem uma conta?</h4>
+                <a href="/login">Logar-se!</a>
+            </div>
+            {% if erro %}
+                <h1 class="erro_sistema_login">{{ erro }}</h1>
+            {% endif %}
+        </form>
     </div>
 </body>
 </html>

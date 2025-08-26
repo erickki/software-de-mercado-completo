@@ -39,11 +39,11 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 60vh;
-    width: 20vw;
+    height: 80vh;
+    width: 25vw;
     gap: 2vh;
     background-color: var(--fundo1);
-    border: inset 4px;
+    border: inset 2px;
     border-radius: 15px;
     border-color: var(--borda1);
     border-style: solid;

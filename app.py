@@ -2,6 +2,7 @@ from flask import Flask, redirect, url_for, render_template, request
 
 from src.login import validar_login
 from src.registro import validar_registro
+from src.esqueceu_senha import validar_esqueceu_senha
 
 app = Flask(__name__)
 
@@ -54,6 +55,25 @@ def fazer_registro():
 @app.route('/esqueceu_senha')
 def esqueceu_senha():
     return render_template('esqueceu_senha.html')
+
+@app.route('/fazer_esqueceu_senha', methods=['POST'])
+def fazer_esqueceu_senha():
+    entrada_nome = request.form.get('entrada_nome_validar')
+    entrada_email = request.form.get('entrada_email_validar')
+    verificacao_esqueceu_senha = validar_esqueceu_senha(entrada_nome, entrada_email)
+    if verificacao_esqueceu_senha == 'codigo gerado':
+        return redirect(url_for('esqueceu_senha2'))
+    elif verificacao_esqueceu_senha == 'falta informacao':
+        return render_template('esqueceu_senha.html', erro='Preencha todos os campos.')
+    elif verificacao_esqueceu_senha == 'nao registrado':
+        return render_template('esqueceu_senha.html', erro='Nome e/ou Email não registrado.')
+    else:
+        return render_template('esqueceu_senha.html', erro='Erro desconhecido.')
+
+    
+@app.route('/esqueceu_senha2')
+def esqueceu_senha2():
+    return render_template('esqueceu_senha2.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
