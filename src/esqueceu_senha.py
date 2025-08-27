@@ -14,11 +14,11 @@ def validar_esqueceu_senha(entrada_nome, entrada_email):
         )
         resultado_email = cursor.fetchone()
         try:
-            if resultado_email[1]:
-                if entrada_nome == resultado_email[0] and entrada_email == resultado_email[1]:
+            if resultado_email[1] == entrada_email:
+                if resultado_email[0] == entrada_nome:
                     codigo_gerado_verificacao = random.randint(100000, 999999)
                     cursor.execute(
-                        "UPDATE usuarios_sistema SET codigo_recuperacao = ? WHRE email = ?",(codigo_gerado_verificacao, entrada_email)
+                        "UPDATE usuarios_sistema SET codigo_recuperacao = ? WHERE email = ?",(codigo_gerado_verificacao, entrada_email)
                     )
                     conn.commit()
                     conn.close()
@@ -29,6 +29,6 @@ def validar_esqueceu_senha(entrada_nome, entrada_email):
                     )
                     return 'codigo gerado'
                 else:
-                    return 'erro desconhecido'
+                    return 'nome incorreto'
         except:
-            return 'nao registrado'
+            return 'email nao registrado'

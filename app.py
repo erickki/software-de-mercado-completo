@@ -65,15 +65,17 @@ def fazer_esqueceu_senha():
         return redirect(url_for('esqueceu_senha2'))
     elif verificacao_esqueceu_senha == 'falta informacao':
         return render_template('esqueceu_senha.html', erro='Preencha todos os campos.')
-    elif verificacao_esqueceu_senha == 'nao registrado':
-        return render_template('esqueceu_senha.html', erro='Nome e/ou Email não registrado.')
+    elif verificacao_esqueceu_senha == 'nome incorreto':
+        return render_template('esqueceu_senha.html', erro='Nome incorreto.')
+    elif verificacao_esqueceu_senha == 'email nao registrado':
+        return render_template('esqueceu_senha.html', erro='Email não registrado.')
     else:
         return render_template('esqueceu_senha.html', erro='Erro desconhecido.')
 
     
-@app.route('/esqueceu_senha2')
-def esqueceu_senha2():
-    return render_template('esqueceu_senha2.html')
+@app.route('/resetar_senha')
+def resetar_senha():
+    return render_template('resetar_senha.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
