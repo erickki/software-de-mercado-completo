@@ -1,20 +1,22 @@
-# Gerenciador de Macros para Warframe
+# Software de Mercado Completo
 
 ## Descrição
 
-Este software foi desenvolvido com o objetivo de auxiliar jogadores de Warframe no gerenciamento de macros personalizadas. Ele permite o carregamento de macros externas, facilitando sua ativação e desativação conforme a necessidade, além de possibilitar a configuração das teclas de atalho de forma prática e rápida.
+Sistema completo para gestão de mercados, desenvolvido com Python no back-end e HTML/CSS no front-end. Inclui funcionalidades de login seguro, cadastros diversos, painel administrativo e controle eficiente de clientes e produtos.
 
 ## Funcionalidades
 
-- Carregamento de macros criadas externamente.
+- Tela de login com autenticação segura.
 
-- Ativação e desativação de macros em tempo real.
+- Dashboard com indicadores de vendas.
 
-- Configuração personalizada das teclas de ativação.
+- Cadastro e gerenciamento de clientes.
 
-- Interface intuitiva para facilitar o uso.
+- Cadastro e gerenciamento de produtos.
 
-- Otimização da jogabilidade através da automação de ações repetitivas.
+- Controle de vendas e relatórios.
+
+- Interface intuitiva e responsiva.
 
 ## Instruções de Uso
 
