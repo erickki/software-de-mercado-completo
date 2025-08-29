@@ -4,31 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
-    <title>Rôxho - Registro</title>
+    <title>Rôxho</title>
 </head>
 <body>
-    <div class="caixa_sistema_login">
-        <h1>Rôxho</h1>
-        <div class="separador_caixa_sistema_login1">
-            <h2>Bem-Vindo(a)!</h2>
-            <h3>Faça seu registro!</h3>
+    <div class="caixa_geral_abrir_sistema">
+        <div class="caixa_geral_abrir_sistema_textos1">
+            <h1>Rôxho</h1>
+            <div class="caixa_geral_abrir_sistema_textos2">
+                <h2>Bem-Vindo(a)!</h2>
+                <h3>Faça seu registro!</h3>
+            </div>
         </div>
-        <form method="POST" action="/fazer_registro">
-            <div class="separador_caixa_sistema_login2">
-                <input type="text" placeholder="Nome" name="entrada_nome_validar">
-                <input type="text" placeholder="Email" name="entrada_email_validar">
-                <input type="password" placeholder="Senha" name="entrada_senha_validar">
-                <input type="password" placeholder="Repetir Senha" name="entrada_senha2_validar">
-                <button type="submit">Registrar</button>
-            </div>
-            <div class="separador_caixa_sistema_login3">
-                <h4>Já tem uma conta?</h4>
-                <a href="/login">Logar-se!</a>
-            </div>
-            {% if erro %}
-                <h1 class="erro_sistema_login">{{ erro }}</h1>
-            {% endif %}
-        </form>
+        <div class="caixa_geral_abrir_sistema_blocos">
+            <input type="text" placeholder="Nome">
+            <input type="text" placeholder="Email">
+            <input type="password" placeholder="Senha">
+            <input type="password" placeholder="Repetir Senha">
+            <button>Registrar</button>
+        </div>
+        <div class="caixa_geral_abrir_sistema_textos3">
+            <h4>Já tem uma conta?</h4>
+            <a href="/login">Logar-se!</a>
+        </div>
     </div>
 </body>
 </html>
