@@ -75,6 +75,14 @@ body {
     gap: 10px;
 }
 
+.caixa_geral_abrir_sistema_textos4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
 .caixa_geral_abrir_sistema h1 {
     font-size: 100px;
     font-weight: bold;
@@ -150,27 +158,37 @@ body {
     color: var(--texto2);
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1368px) {
+
+    .caixa_geral_abrir_sistema {
+        height: 85vh;
+        padding: 20px 0 20px 0;
+    }
+
+    .caixa_geral_abrir_sistema_textos1 {
+        gap: 0px;
+    }
+
     .caixa_geral_abrir_sistema h1 {
-        font-size: 80px;
+        font-size: 70px;
     }
 
     .caixa_geral_abrir_sistema h2 {
-        font-size: 30px;
+        font-size: 20px;
     }
 
     .caixa_geral_abrir_sistema h3 {
-        font-size: 25px;
+        font-size: 15px;
     }
 
     .caixa_geral_abrir_sistema input {
-        height: 55px;
+        height: 40px;
         width: 350px;
         font-size: 15px;
     }
 
     .caixa_geral_abrir_sistema button {
-        height: 55px;
+        height: 40px;
         width: 350px;
         font-size: 20px;
     }

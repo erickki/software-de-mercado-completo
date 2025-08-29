@@ -31,5 +31,9 @@ def registro():
 def sistema_inicio():
     return render_template('sistema_inicio.html')
 
+@app.route('/sistema_funcionarios')
+def sistema_funcionarios():
+    return render_template('sistema_funcionarios.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
