@@ -16,10 +16,15 @@
             </div>
         </div>
         <div class="caixa_geral_abrir_sistema_blocos">
-            <input type="text" placeholder="Email">
-            <input type="password" placeholder="Senha">
-            <button>Login</button>
+            <form method="POST" action="/erro_no_login">
+                <input type="text" placeholder="Email" name="entrada_email_validar">
+                <input type="password" placeholder="Senha" name="entrada_senha_validar">
+                <button type="submit">Login</button>
+            </form>
             <a href="/esqueci_senha" class="a1">Esqueceu a senha?</a>
+            {% if erro %}
+            <h5>{{ erro }}</h5>
+            {% endif %}
         </div>
         <div class="caixa_geral_abrir_sistema_textos3">
             <h4>Não tem uma conta?</h4>

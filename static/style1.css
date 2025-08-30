@@ -6,6 +6,7 @@
     --texto1:#965DC9;
     --texto2:#E6E6E6;
     --texto3:#A3A3A3;
+    --erro:#d62a1e;
 }
 
 * {
@@ -34,8 +35,8 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    height: 80vh;
-    width: 30vw;
+    height: 75vh;
+    width: 25vw;
     background-color: var(--fundo1);
     border: inset 4px;
     border-radius: 25px;
@@ -49,7 +50,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
 }
 
 .caixa_geral_abrir_sistema_textos2 {
@@ -59,7 +60,7 @@ body {
     flex-direction: column;
 }
 
-.caixa_geral_abrir_sistema_blocos {
+.caixa_geral_abrir_sistema_blocos, .caixa_geral_abrir_sistema_blocos form {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,33 +85,33 @@ body {
 }
 
 .caixa_geral_abrir_sistema h1 {
-    font-size: 100px;
+    font-size: 80px;
     font-weight: bold;
     font-style: italic;
     color: var(--texto1);
 }
 
 .caixa_geral_abrir_sistema h2 {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
     color: var(--texto2);
 }
 
 .caixa_geral_abrir_sistema h3 {
-    font-size: 35px;
+    font-size: 25px;
     font-weight: bold;
     color: var(--texto3);
 }
 
 .caixa_geral_abrir_sistema input {
-    height: 60px;
-    width: 400px;
+    height: 55px;
+    width: 350px;
     background-color: var(--fundo1);
     border: inset 4px;
     border-radius: 15px;
     border-color: var(--borda1);
     border-style: solid;
-    font-size: 25px;
+    font-size: 20px;
     font-style: normal;
     color: var(--texto2);
     padding-left: 10px;
@@ -127,35 +128,42 @@ body {
 }
 
 .caixa_geral_abrir_sistema button {
-    height: 60px;
-    width: 400px;
+    height: 55px;
+    width: 350px;
     background-color: var(--texto1);
     border: none;
     border-radius: 15px;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
     color: var(--texto2);
     transition: .2s;
 }
 
 .caixa_geral_abrir_sistema button:hover {
-    font-size: 35px;
+    font-size: 30px;
 }
 
 .caixa_geral_abrir_sistema button:active {
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .caixa_geral_abrir_sistema a {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     color: var(--texto1);
 }
 
 .caixa_geral_abrir_sistema h4 {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     color: var(--texto2);
+}
+
+.caixa_geral_abrir_sistema h5 {
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    color: var(--erro);
 }
 
 @media screen and (max-width: 1368px) {

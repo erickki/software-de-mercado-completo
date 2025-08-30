@@ -16,11 +16,16 @@
             </div>
         </div>
         <div class="caixa_geral_abrir_sistema_blocos">
-            <input type="text" placeholder="Nome">
-            <input type="text" placeholder="Email">
-            <input type="password" placeholder="Senha">
-            <input type="password" placeholder="Repetir Senha">
-            <button>Registrar</button>
+            <form method="POST" action="/erro_registro">
+                <input type="text" placeholder="Nome" name="entrada_nome_validar">
+                <input type="text" placeholder="Email" name="entrada_email_validar">
+                <input type="password" placeholder="Senha" name="entrada_senha_validar">
+                <input type="password" placeholder="Repetir Senha" name="entrada_senha2_validar">
+                <button type="submit">Registrar</button>
+                {% if erro %}
+                <h5>{{ erro }}</h5>
+                {% endif %}
+            </form>
         </div>
         <div class="caixa_geral_abrir_sistema_textos3">
             <h4>Já tem uma conta?</h4>

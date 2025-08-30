@@ -47,7 +47,7 @@ def fazer_esqueci_senha(entrada_nome, entrada_email):
     except:
         return 'email não localizado'
 
-def fazer_resetar_senha(entrada_email, entrada_senha, entrada_codigo_verificacao):
+def fazer_resetar_senha(entrada_email, entrada_senha, entrada_codigo):
     conn = sqlite3.connect(banco_dados)
     cursor = conn.cursor()
     try:
@@ -55,9 +55,10 @@ def fazer_resetar_senha(entrada_email, entrada_senha, entrada_codigo_verificacao
             "SELECT codigo_recuperacao FROM usuarios_sistema_roxho WHERE email = ?",(entrada_email,)
         )
         resultado_codigo = cursor.fetchone()
-        if resultado_codigo[0] == entrada_codigo_verificacao:
+        if resultado_codigo[0] == entrada_codigo:
+            retirar_codigo = ''
             cursor.execute(
-                "UPDATE usuarios_sistema_roxho SET senha = ? WHERE email = ?",(entrada_senha, entrada_email)
+                "UPDATE usuarios_sistema_roxho SET senha = ?, codigo_recuperacao = ? WHERE email = ?",(entrada_senha, retirar_codigo, entrada_email)
             )
             conn.commit()
             conn.close()
@@ -70,6 +71,3 @@ def fazer_resetar_senha(entrada_email, entrada_senha, entrada_codigo_verificacao
 def fazer_registro(entrada_nome, entrada_email, entrada_senha):
     conn = sqlite3.connect(banco_dados)
     cursor = conn.cursor()
-    cursor.execute(
-        "SELECT email FROM usuarios_sistema_roxho WHERE email = ?",(entrada_email,)
-    )

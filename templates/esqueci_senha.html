@@ -16,9 +16,14 @@
             </div>
         </div>
         <div class="caixa_geral_abrir_sistema_blocos">
-            <input type="text" placeholder="Nome">
-            <input type="text" placeholder="Email">
-            <button>Solicitar</button>
+            <form action="/erro_esqueci_senha" method="post">
+                <input type="text" placeholder="Nome" name="entrada_nome_validar">
+                <input type="text" placeholder="Email" name="entrada_email_validar">
+                <button type="submit">Solicitar</button>
+                {% if erro %}
+                <h5>{{ erro }}</h5>
+                {% endif %}
+            </form>
         </div>
         <div class="caixa_geral_abrir_sistema_textos4">
             <div class="caixa_geral_abrir_sistema_textos3">
