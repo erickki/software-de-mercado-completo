@@ -4,8 +4,11 @@ from src.sistema_login import fazer_login
 from src.sistema_login import fazer_esqueci_senha
 from src.sistema_login import fazer_resetar_senha
 from src.sistema_login import fazer_registro
+from src.sistema_validar_dados import validar_dado_nome
 
 app = Flask(__name__)
+
+registro_login_salvo = ''
 
 @app.route('/')
 def index():
@@ -17,11 +20,14 @@ def login():
 
 @app.route('/erro_no_login', methods=['POST'])
 def erro_no_login():
+    global registro_login_salvo
     entrada_email = request.form.get('entrada_email_validar')
     entrada_senha = request.form.get('entrada_senha_validar')
+    registro_login_salvo = entrada_email
     verificacao_login = fazer_login(entrada_email, entrada_senha)
     if verificacao_login == 'pode logar':
-        return redirect(url_for('sistema_inicio'))
+        registro_login_salvo = entrada_email
+        return redirect(url_for('inicio')) 
     elif verificacao_login == 'senha incorreta':
         return render_template('login.html', erro='Senha incorreta.')
     elif verificacao_login == 'email não localizado':
@@ -95,9 +101,15 @@ def erro_registro():
         else:
             return render_template('registro.html', erro='Erro desconhecido.')
 
-@app.route('/sistema_inicio')
-def sistema_inicio():
-    return render_template('sistema_inicio.html')
+@app.route('/inicio')
+def inicio():
+    global registro_login_salvo
+    nome_salvo = validar_dado_nome(registro_login_salvo)
+    return render_template('inicio.html', nome=nome_salvo)
+
+@app.route('/cadastros_funcionarios')
+def cadastros_funcionarios():
+    return render_template('cadastros_funcionarios.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

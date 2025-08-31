@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <title>Rôxho</title>
+</head>
+<body>
+    <div class="sistema_barra_navegacao">
+        <h1>Rôxho</h1>
+        <div class="sistema_barra_navegacao_opcoes">
+            <a href="/inicio" class="navegacao_atual"><i class="bi bi-house-door-fill"></i>Início</a>
+            <div class="sistema_barra_navegacao_opcao1">
+                <h2><i class="bi bi-person-badge-fill"></i>Funcionários<i class="bi bi-caret-down-fill"></i></h2>
+                <div class="sistema_barra_navegacao_subopcao">
+                    <a href="/cadastros_funcionarios"></i>Cadastros</a>
+                </div>
+            </div>
+            <div class="sistema_barra_navegacao_opcao2">
+                <h2><i class="bi bi-people-fill"></i>Clientes<i class="bi bi-caret-down-fill"></i></h2>
+                <div class="sistema_barra_navegacao_subopcao">
+                    <a href="/sistema_clientes"></i>Clientes</a>
+                </div>
+            </div>
+            <div class="sistema_barra_navegacao_opcao3">
+                <h2><i class="bi bi-cart-fill"></i>Produtos<i class="bi bi-caret-down-fill"></i></h2>
+                <div class="sistema_barra_navegacao_subopcao">
+                    <a href="/sistema_produtos">Produtos</a>
+                </div>
+            </div>
+            <div class="sistema_barra_navegacao_opcao4">
+                <h2><i class="bi bi-person-vcard-fill"></i>Fornecedores<i class="bi bi-caret-down-fill"></i></h2>
+                <div class="sistema_barra_navegacao_subopcao">
+                    <a href="/sistema_fornecedores">Fornecedores</a>
+                </div>
+            </div>
+            <div class="sistema_barra_navegacao_opcao5">
+                <h2><i class="bi bi-archive-fill"></i>Estoque<i class="bi bi-caret-down-fill"></i></h2>
+                <div class="sistema_barra_navegacao_subopcao">
+                    <a href="/sistema_estoque">Estoque</a>
+                </div>
+            </div>
+            <a href="/sistema_configuracoes"><i class="bi bi-x-circle-fill"></i>Configurações</a>
+        </div>
+        <a href="/login"><i class="bi bi-x-circle-fill"></i>Sair</a>
+    </div>
+    <div class="sistema_restante_site_cadastros_funcionarios">
+        <div class="sistema_restante_site_modificar_cadastros_funcionarios">
+            <input type="text" placeholder="ID" name="entrada_id_modificar" class="cadastros_funcionarios">
+            <input type="text" placeholder="Coluna" name="entrada_coluna_modificar" class="cadastros_funcionarios">
+            <input type="text" placeholder="Nova Informação" name="entrada_informacao_modificar" class="cadastros_funcionarios">
+            <button type="submit" class="cadastros_funcionarios">Modificar</button>
+        </div>
+        <div class="sistema_restante_site_tabela_cadastros_funcionarios">
+
+        </div>
+    </div>
+</body>
+</html>

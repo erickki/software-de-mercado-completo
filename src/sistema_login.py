@@ -46,6 +46,8 @@ def fazer_esqueci_senha(entrada_nome, entrada_email):
             return 'nome incorreto'
     except:
         return 'email não localizado'
+    finally:
+        conn.close()
 
 def fazer_resetar_senha(entrada_email, entrada_senha, entrada_codigo):
     conn = sqlite3.connect(banco_dados)
@@ -67,7 +69,22 @@ def fazer_resetar_senha(entrada_email, entrada_senha, entrada_codigo):
             return 'codigo incorreto'
     except:
         return 'email não localizado'
+    finally:
+        conn.close()
 
 def fazer_registro(entrada_nome, entrada_email, entrada_senha):
     conn = sqlite3.connect(banco_dados)
     cursor = conn.cursor()
+    cursor.execute(
+        "SELECT email FROM usuarios_sistema_roxho WHERE email = ?",(entrada_email,)
+    )
+    resultao_email = cursor.fetchone()
+    if resultao_email:
+        return 'email já cadastrado'
+    else:
+        cursor.execute(
+            "INSERT INTO usuarios_sistema_roxho (nome, email, senha) VALUES (?, ?, ?)",(entrada_nome, entrada_email, entrada_senha)
+        )
+        conn.commit()
+        conn.close()
+        return 'registrado'
