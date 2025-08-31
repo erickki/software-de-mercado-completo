@@ -18,16 +18,6 @@ Sistema completo para gestão de mercados, desenvolvido com Python no back-end e
 
 - Interface intuitiva e responsiva.
 
-## Instruções de Uso
-
-1. Baixe e instale o programa.
-
-2. Carregue as macros personalizadas no sistema, na pasta "macros".
-
-3. Configure as teclas de atalho conforme sua preferência.
-
-4. Ative ou desative macros durante o jogo de forma prática.
-
 ## Licença
 
 Este projeto está licenciado sob os direitos autorais do autor original.
